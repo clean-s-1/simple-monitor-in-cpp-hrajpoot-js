@@ -1,3 +1,4 @@
+
 #include<bits/stdc++.h>
 
 #define LOW_TEMPERATURE 0
@@ -22,4 +23,5 @@ class BatteryManagementSystem
     bool checkTemperature();
     bool checkStateOfCharge();
     bool checkChargeRate();
+    void check_abnormal_measure(const float input, const float low_limit, const float high_limit);
 };

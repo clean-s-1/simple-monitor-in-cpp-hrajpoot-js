@@ -2,11 +2,23 @@
 
 using namespace std;
 
+void BatteryManagementSystem::check_abnormal_measure(const float input, const float low_limit, const float high_limit){
+    if(input < low_limit)
+    {
+        cout << "The input value " << input << " is lower than the accepted limit " << low_limit << endl; 
+    }
+    else if(input > high_limit)
+    {
+        cout << "The input value " << input << " is higher than the accepted limit " << high_limit << endl;
+    }
+}
+
 bool BatteryManagementSystem::checkTemperature(){
     bool returnValue = true;
 
     if(_temperature < LOW_TEMPERATURE || _temperature > HIGH_TEMPERATURE) {
-        cout << "Temperature out of range!\n";
+        cout << "Temperature out of range. ";
+        check_abnormal_measure(_temperature, LOW_TEMPERATURE, HIGH_TEMPERATURE);
         returnValue = false;
     }
 
@@ -17,7 +29,8 @@ bool BatteryManagementSystem::checkStateOfCharge(){
     bool returnValue = true;
 
     if(_stateOfCharge < LOW_SOC || _stateOfCharge > HIGH_SOC) {
-        cout << "State of Charge out of range!\n";
+        cout << "State of Charge out of range. ";
+        check_abnormal_measure(_stateOfCharge, LOW_SOC, HIGH_SOC);
         returnValue = false;
     }
 

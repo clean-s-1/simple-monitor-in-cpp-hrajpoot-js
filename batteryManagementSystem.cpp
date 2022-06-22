@@ -10,12 +10,12 @@ float BatteryManagementSystem::fetch_warning_tolerance(const float upper_limit)
     return warning_tolerance;
 }
 
-void BatteryManagementSystem::lower_abnormal(const string message)
+void BatteryManagementSystem::lower_abnormal_msg(const string message)
 {
     cout << message << ". ";
 }
 
-void BatteryManagementSystem::higher_abnormal(const string message)
+void BatteryManagementSystem::higher_abnormal_msg(const string message)
 {
     cout << message << ". ";
 }
@@ -25,7 +25,7 @@ bool BatteryManagementSystem::check_lower_limit(const float allowed_lower_limit,
     bool returnValue = false;
     if(input_limit < allowed_lower_limit)
     {
-        lower_abnormal(LOWER_ABNORMAL_MESSAGE);
+        lower_abnormal_msg(LOWER_ABNORMAL_MESSAGE);
         returnValue = true;
     }
 
@@ -37,7 +37,7 @@ bool BatteryManagementSystem::check_higher_limit(const float allowed_higher_limi
     bool returnValue = false;
     if(input_limit > allowed_higher_limit)
     {
-        higher_abnormal(HIGHER_ABNORMAL_MESSAGE);
+        higher_abnormal_msg(HIGHER_ABNORMAL_MESSAGE);
         returnValue = true;
     }
     return returnValue;

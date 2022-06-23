@@ -16,16 +16,6 @@
 #define HIGHER_ABNORMAL_MESSAGE "Der Eingabewert ist HÖHER als der akzeptierte Grenzwert"
 #endif
 
-
-//warning message 
-#define DISCHARGE_WARN "Approaching discharge"
-#define CHARGE_PEAK_WARN "Approaching charge-peak"
-#define TEMPERATURE_WARN "Approaching Low temperature"
-#define TEMPERATURE_PEAK_WARN "Approaching temperature-peak"
-#define CHARGE_RATE_WARN "Approaching Low charge rate"
-#define CHARGE_RATE_PEAK_WARN "Approaching peak-charge-rate"
-
-
 #define LOW_TEMPERATURE 0
 #define HIGH_TEMPERATURE 45
 #define LOW_SOC 20

@@ -1,13 +1,16 @@
 #include "constants.h"
 #include "batteryManagementSystem.h"
 
-float BatteryManagementSystem::fetch_warning_tolerance(const float upper_limit)
+void BatteryManagementSystem::validate_boundry_conditions(const float number)
 {
-    float warning_tolerance = (upper_limit * 5) / (100);
-
-    cout << "warning_tolerance: " << warning_tolerance << endl;
-
-    return warning_tolerance;
+    for (auto &a : boundry_conditions)
+    {
+        if (number >= a.first.first && number <= a.first.second)
+        {
+            cout << warning_message[a.second] << endl;
+            break;
+        }
+    }
 }
 
 void BatteryManagementSystem::lower_abnormal_msg(const string message)

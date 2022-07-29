@@ -11,6 +11,7 @@ class BatteryManagementSystem {
     bool check_lower_limit(const float allowed_lower_limit, const float input_limit);
     bool check_higher_limit(const float allowed_higher_limit, const float input_limit);
     void info_logger(const string message);
+    void display_warning(const float number, const float lowerLimit, const float upperLimit);
     
     void validate_boundry_conditions(const float number);
 

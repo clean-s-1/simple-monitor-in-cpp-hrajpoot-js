@@ -5,11 +5,11 @@ void BatteryManagementSystem::validate_boundry_conditions(const float number)
 {
     for (auto &a : boundry_conditions)
     {
-        if (number >= a.first.first && number <= a.first.second)
-        {
+        //if (number >= a.first.first && number <= a.first.second)
+        //{
             cout << warning_message[a.second] << endl;
             break;
-        }
+        //}
     }
 }
 

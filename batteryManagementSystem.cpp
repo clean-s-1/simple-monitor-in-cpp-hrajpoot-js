@@ -1,12 +1,17 @@
 #include "constants.h"
 #include "batteryManagementSystem.h"
 
+void display_warning(const float number, const float lowerLimit, const float upperLimit)
+{
+    if (number >= lowerLimit && number <= upperLimit)
+          cout << warning_message[{lowerLimit, upperLimit}] << endl;    
+}
+
 void BatteryManagementSystem::validate_boundry_conditions(const float number)
 {
     for (auto &a : boundry_conditions)
     {
-        if (number >= a.first.first && number <= a.first.second)
-              cout << warning_message[a.second] << endl;
+        display_warning(number, a.first.first, a.first.second);
     }
 }
 

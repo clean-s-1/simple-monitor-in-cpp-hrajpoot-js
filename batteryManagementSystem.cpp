@@ -1,7 +1,7 @@
 #include "constants.h"
 #include "batteryManagementSystem.h"
 
-void display_warning(const float number, const float lowerLimit, const float upperLimit)
+void BatteryManagementSystem::display_warning(const float number, const float lowerLimit, const float upperLimit)
 {
     if (number >= lowerLimit && number <= upperLimit)
           cout << warning_message[{lowerLimit, upperLimit}] << endl;    

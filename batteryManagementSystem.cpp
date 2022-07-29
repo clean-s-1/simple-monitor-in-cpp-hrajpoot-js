@@ -47,4 +47,3 @@ void BatteryManagementSystem::raise_alert(const string message)
 {
    cout << message << endl;
 }
-
